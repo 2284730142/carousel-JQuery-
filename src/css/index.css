@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: '微软雅黑', serif;
+}
+
+.container {
+    width: 500px;
+    height: 300px;
+    margin: auto;
+}
+
+.ad {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ad > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ad > div:not(:nth-child(1)) {
+    transform: translate(100%, 0);
+}
+
+.ad > div > img {
+    width: 100%;
+    height: 100%;
+}
+
+.bottom {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    background: #b1b2be;
+}
+
+.bottom > div {
+    flex: 1;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: background 0.8s,color 0.8s;
+}
+
+.bottom > div.active {
+    background: rgba(255, 255, 255, 0.15);
+    color: #f3c258;
+}
+
+.inLeft {
+    animation: inLeft 0.8s both;
+}
+
+.outLeft {
+    animation: outLeft 0.8s both;
+}
+
+.inRight {
+    animation: inRight 0.8s both;
+}
+
+.outRight {
+    animation: outRight 0.8s both;
+}
+
+@keyframes inLeft {
+    from {
+        transform: translate(-100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes outLeft {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-100%, 0);
+    }
+}
+
+@keyframes inRight {
+    from {
+        transform: translate(100%, 0);
+    }
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes outRight {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(100%, 0);
+    }
+}
